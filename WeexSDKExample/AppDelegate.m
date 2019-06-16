@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+@import WeexSDK;
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // App configuration
+    [WXAppConfiguration setAppGroup:@"Your app group"];
+    [WXAppConfiguration setAppName:@"Your app name"];
+    [WXAppConfiguration setAppVersion:@"Your app version"];
+    
+    //Initialize WeexSDK
+    [WXSDKEngine initSDKEnvironment];
+    
+    //Register custom modules and components, optional.
+    
+    
+    //Set the log level, optional
+    [WXLog setLogLevel: WXLogLevelAll];
+    
     return YES;
 }
 

@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
+@import WeexSDK;
+@import AVFoundation;
+
 @interface ViewController ()
 
 @end
@@ -17,6 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSString *fileName = @"weex-main-jsfm";
+    
+    NSBundle *ddd = [NSBundle bundleForClass:self];
+    NSString *filePath = [ddd pathForResource:fileName ofType:@"js"];
+    
+    NSBundle *wx = [NSBundle bundleForClass:[AVAsset class]];
+    NSLog(@"%@", wx);
+
 }
 
 
